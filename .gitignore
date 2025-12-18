@@ -1,0 +1,39 @@
+# ===============================
+# Environment & Config Files
+# ===============================
+.env
+config.php
+backend/config.php
+
+# ===============================
+# XAMPP / Local Server Files
+# ===============================
+xampp/
+htdocs/
+
+# ===============================
+# Uploaded User Documents (Sensitive)
+# ===============================
+uploads/*
+!uploads/.gitkeep
+
+# ===============================
+# Database Dumps (Optional)
+# ===============================
+# Ignore automatic backups if any
+*.bak
+
+# ===============================
+# OS / Editor Files
+# ===============================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===============================
+# Logs & Temp Files
+# ===============================
+*.log
+tmp/
+temp/

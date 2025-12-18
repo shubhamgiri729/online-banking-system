@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minor To Major | Online Banking Website mini project</title>
+    <link rel="stylesheet" href="../CSS/MTM.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1>Online Banking System</h1>
+        <a href="index.php"><img src="..//Images//onlinebank.jpg" alt="Online Banking System" title="Online Bank"></a>
+    </div>
+    <div id="apply">
+        <h1>Minor To Major</h1>
+        <div id="MTM">
+            <h1 class="img">fill the form</h1>
+            <div class="form-container">
+                <h2>Application for Changing Account from Minor to Major</h2>
+             
+                <form id="MTM" action="project.php" method="post"> 
+                    <!-- Letter Heading -->
+                    <p>To,<br>
+                        The Branch Manager,<br></p>
+                    <input type="text" id="bankName" name="bankName" placeholder="Bank Name" required><br>
+                    <input type="text" id="branchName" name="branchName" placeholder="Branch" required><br>
+                    <input type="text" id="branchAddress" name="branchAddress" placeholder="Branch Address"
+                        required><br>
+
+
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <p><strong>Subject:</strong> Application for changing account from minor to major account</p>
+
+                    <p>Sir/Madam,</p>
+                    <p>I, <input type="text" id="yourName" name="yourName" placeholder="Your Name" required> holding a
+                        minor account in your branch. My account number is <input type="text" class="acnum" id="accountNumber"
+                            name="accountNumber" placeholder="Account Number" required>. My date of birth is <input
+                            type="date" id="dob" name="dob" required>. Now, I have become a major to access my account
+                        and hence I want to operate the account facilities without any restrictions.</p>
+
+                    <p>I request you to kindly convert the above-mentioned account to a major account.</p>
+
+                    <p id="documentsList" name="documentsList">I am enclosing KYC documents, Photo, and all other relevant documents along with the application.</p>
+
+                    <p>Yours truly,<br>
+                        <input type="text" id="yourName2" name="yourName2" placeholder="Your Name" required><br>
+                        <input type="text" id="accountNumber3" class="acnum" name="accountNumber3" placeholder="Account Number"
+                            required><br>
+                        <input type="text" id="branchAddress2" name="branchAddress2" placeholder="Branch Address"
+                            required><br>
+                        <input type="text" id="ifsc" name="ifsc" placeholder="IFSC Code" required>
+                    </p>
+                    </br>
+                    <p class="img">Upload Password size photo</p><input type="file" class="myFile" name="photo" required></br>
+                    <p class="img">Upload Pan Card</p><input type="file" class="myFile" name="pan" required></br>
+                    <p class="img">Upload Aadhar Card</p><input type="file" class="myFile" name="aadhar" required></br>
+                    <button class="styled" type="submit"value="Submit Application" name="submit">Submit Application</button>
+                    
+                </form>
+            </div>
+                <script src="../Java Script/MTM.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>

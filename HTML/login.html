@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Login | Online Banking Website mini project</title>
+        <link href="../CSS/login.css" rel="stylesheet">
+        <script src="../Java Script/loginJS.js"></script>
+    </head>
+
+    <body onload="load();">
+        <div id="header">
+            <h1 id="SKM" >Online Banking System</h1>
+            <a href="index.php"><img src="../Images/onlinebank.jpg" alt="Online Banking System" title="Online Banking Website"></a>
+          <div class="bank">
+            <marquee direction="right" height="500px" behavior="loop" onmouseover="stop();" scrollamount="20" onmouseout="start();">Welcome to Online Bank !! </marquee>
+          </div>
+
+        </div>
+        <form action="login.php" method="POST">
+            <fieldset>
+                <legend>Login</legend>
+                <input name="email" type="email" placeholder="Enter your Email Address" id="email" required><br />
+                <input type="text" name="username" placeholder="Enter your Account Number" id="accno" required><br />
+                <input type="password" accept="number" name="password" placeholder="Enter your Password" id="password"
+                    onblur="return validForm();" required><br />
+                <div id="result"></div>
+                <!-- <button type="button" id="loginbtn" value="0" onclick="goto();">Login In</button> -->
+                 <button type="submit" id="loginbtn">Log In</button>
+                <p class="sign"> Don`t have an account </p>
+                <p class="sign" id="signin" onclick="window.location.href='signup.html'">sign up</p>
+            </fieldset>
+        </form>
+    </body>
+
+</html>
