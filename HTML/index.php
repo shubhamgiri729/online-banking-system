@@ -11,119 +11,93 @@ session_start();
 </head>
 
 <body>
-    <div id="header" class="head">
-        <h1>Online Banking System</h1>
-        <a href="admin_verify.php" target="_blank"><img src="../Images/onlinebank.jpg" alt="Online Banking System" title="Online Banking Website"></a>
-    </div>
+    <header id="header" class="head">
+        <!-- <h1>Online Banking System</h1> -->
+        <a href="admin_verify.php" target="_blank">
+            <img src="../Images/onlinebank.jpg" alt="Online Banking System" title="Online Banking Website">
+        </a>
+        <div id="log_sign">
+            <?php if (isset($_SESSION['name'])): ?>
+            <p>Welcome, <b>
+                    <?php echo htmlspecialchars($_SESSION['name']); ?>
+                </b> 👋</p>
+            <p><a href="logout.php">Logout</a></p>
+            <?php else: ?>
+            <p>Welcome, user</li>
+            <p><a href="login.html">Login</a></p>
+            <?php endif; ?>
+        </div>
+    </header>
 
-    <div id="log_sign">
-        <?php if (isset($_SESSION['name'])): ?>
-            <li>Welcome, <b><?php echo htmlspecialchars($_SESSION['name']); ?></b> 👋</li>
-            <li><a href="logout.php">Logout</a></li>
-        <?php else: ?>
-            <li>Welcome, user</li>
-            <li><a href="login.html">Login</a></li>
-            <!-- <li><a href="signup.html">Sign Up</a></li> -->
-        <?php endif; ?>
-    </div>
+    <nav id="navbar">
+        <section id="services">
+            <a id="service" class="nav-head" href="#">Services</a>
+            <?php if (isset($_SESSION['customer_id'])): ?>
+            <div class="content">
+                <a href="perIntBank.html">Personal Internet Banking</a>
+                <a href="MTM.html" id="e_service">Minor to Major</a>
+            </div>
+            <?php else: ?>
+            <div class="content">
+                <p style="color: black;">Login to check details!!</p>
+            </div>
+            <?php endif; ?>
+        </section>
 
-    <div id="navbar">
-        <div id="nav">
-            <div id="services">
-                <li><a id="service" href="#">Services</a></li>
+        <section id="payment_transfer">
+            <a href="#" class="nav-head">Payment Transfer</a>
+            <?php if (isset($_SESSION['customer_id'])): ?>
+            <div class="content">
+                <a href="natTransfer.php">National Transfer</a>
+                <a href="billPay.html">Bill Payment</a>
+            </div>
+            <?php else: ?>
+            <div class="content">
+                <p style="color: black;">Login to check details!!</p>
+            </div>
+            <?php endif; ?>
+        </section>
+
+        <section id="fixed_deposite">
                 <?php if (isset($_SESSION['customer_id'])): ?>
-                    <ul class="content">
-                        <li><a href="perIntBank.html">Personal Internet Banking</a></li>
-                        <li><a href="MTM.html" id="e_service" >Minor to Major</a></li>
-                    </ul>
+                <a class="nav-head" href="fixDep.html">Fixed Deposit</a>
                 <?php else: ?>
-                    <ul class="content">
-                        <li style="color: black;">Login to check details!!</li>
-                    </ul>
+                <a href="#" onclick="alert('Please login to access Deposit section!')">Deposit</a>
+                <?php endif; ?>
+        </section>
+
+        <section id="acc">
+            <div>
+                <?php if (isset($_SESSION['customer_id'])): ?>
+                <a class="nav-head" href="acc.php">My Account</a>
+                <?php else: ?>
+                <a href="#" onclick="alert('Please login to access My Account section!')">My Account</a>
                 <?php endif; ?>
             </div>
+        </section>
+    </nav>
 
-            <div id="payment_transfer">
-                <li><a href="#">Payment Transfer</a> </li>
-                <?php if (isset($_SESSION['customer_id'])): ?>
-                    <ul class="content">
-                        <li><a href="natTransfer.php">National Transfer</a></li>
-                        <li><a href="billPay.html">Bill Payment</a></li>
-                    </ul>
-                <?php else: ?>
-                    <ul class="content">
-                        <li style="color: black;">Login to check details!!</li>
-                    </ul>
-                <?php endif; ?>
+    <main class="main-content">
+
+
+
+        <section class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="../Images/online banking-1.png">
             </div>
-
-            <div id="fixed_deposite">
-                <?php if (isset($_SESSION['customer_id'])): ?>
-                    <li><a href="fixDep.html">Fixed Deposit</a></li>
-                <?php else: ?>
-                    <li><a href="#" onclick="alert('Please login to access Deposit section!')">Deposit</a></li>
-                <?php endif; ?>
+            <div class="mySlides fade">
+                <img src="../Images/online banking-2.png">
             </div>
-
-            <div id="acc">
-                <?php if (isset($_SESSION['customer_id'])): ?>
-                    <li><a href="acc.php">My Account</a></li>
-                <?php else: ?>
-                    <li><a href="#" onclick="alert('Please login to access My Account section!')">My Account</a></li>
-                <?php endif; ?>
+            <div class="mySlides fade">
+                <img src="../Images/online banking-3.png">
             </div>
-        </div>
-    </div>
+        </section>
 
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="../Images/online banking-1.png">
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="../Images/online banking-2.png">
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="../Images/online banking-3.png">
-        </div>
-    </div>
 
-    <div style="text-align:center">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
+        <div id="disp">
+            <!-- <p>Login to see your Details here:</p> -->
 
-    <script>
-        var slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 2000);
-        }
-    </script>
-
-    <div id="disp">
-        <p>Login to see your Details here:</p>
-
-        <div>
+            <!-- <div>
             <?php
            
             $isLoggedIn = isset($_SESSION['customer_id']);
@@ -150,17 +124,38 @@ session_start();
                 placeholder="Account Balance">
 
             <?php if (!$isLoggedIn): ?>
-                <p style="color: red;">You are not logged in.</p>
+            <p style="color: red;">You are not logged in.</p>
             <?php endif; ?>
+        </div> -->
         </div>
-    </div>
 
+    </main>
 
     <footer>
-        <div id="foot">
+        <nav id="foot">
             <a href="aboutUs.html">About Us</a>
-        </div>
+        </nav>
     </footer>
+
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("fade");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            } for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            } slideIndex++;
+            if (slideIndex > slides.length)
+                slideIndex = 1; slides[slideIndex - 1].style.display = "block";
+            if (dots[slideIndex - 1]) {
+                dots[slideIndex - 1].classList.add("active");
+            } setTimeout(showSlides, 2000);
+        } 
+    </script>
 </body>
 
 </html>
