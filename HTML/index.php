@@ -18,13 +18,18 @@ session_start();
         </a>
         <div id="log_sign">
             <?php if (isset($_SESSION['name'])): ?>
-            <p>Welcome, <b>
-                    <?php echo htmlspecialchars($_SESSION['name']); ?>
-                </b> 👋</p>
-            <p><a href="logout.php">Logout</a></p>
+                <div class="greet">
+                    <p>Welcome, <b>
+                            <?php echo htmlspecialchars($_SESSION['name']); ?>
+                        </b> 👋</p>
+                    <p class="tagline">Access and manage your account and transaction efficiently</p>
+                </div>
+                <p id="logout"><a href="logout.php">Logout</a></p>
             <?php else: ?>
-            <p>Welcome, user</li>
-            <p><a href="login.html">Login</a></p>
+                <div class="greet">
+                    <p>Welcome, user</li>
+                    <p id="login"><a href="login.html">Login</a></p>
+                </div>
             <?php endif; ?>
         </div>
     </header>
@@ -33,45 +38,45 @@ session_start();
         <section id="services">
             <a id="service" class="nav-head" href="#">Services</a>
             <?php if (isset($_SESSION['customer_id'])): ?>
-            <div class="content">
-                <a href="perIntBank.html">Personal Internet Banking</a>
-                <a href="MTM.html" id="e_service">Minor to Major</a>
-            </div>
+                <div class="content">
+                    <a href="perIntBank.html">Personal Internet Banking</a>
+                    <a href="MTM.html" id="e_service">Minor to Major</a>
+                </div>
             <?php else: ?>
-            <div class="content">
-                <p style="color: black;">Login to check details!!</p>
-            </div>
+                <div class="content">
+                    <p style="color: black;">Login to check details!!</p>
+                </div>
             <?php endif; ?>
         </section>
 
         <section id="payment_transfer">
             <a href="#" class="nav-head">Payment Transfer</a>
             <?php if (isset($_SESSION['customer_id'])): ?>
-            <div class="content">
-                <a href="natTransfer.php">National Transfer</a>
-                <a href="billPay.html">Bill Payment</a>
-            </div>
+                <div class="content">
+                    <a href="natTransfer.php">National Transfer</a>
+                    <a href="billPay.html">Bill Payment</a>
+                </div>
             <?php else: ?>
-            <div class="content">
-                <p style="color: black;">Login to check details!!</p>
-            </div>
+                <div class="content">
+                    <p style="color: black;">Login to check details!!</p>
+                </div>
             <?php endif; ?>
         </section>
 
         <section id="fixed_deposite">
-                <?php if (isset($_SESSION['customer_id'])): ?>
+            <?php if (isset($_SESSION['customer_id'])): ?>
                 <a class="nav-head" href="fixDep.html">Fixed Deposit</a>
-                <?php else: ?>
-                <a href="#" onclick="alert('Please login to access Deposit section!')">Deposit</a>
-                <?php endif; ?>
+            <?php else: ?>
+                <a href="#" class="basic" onclick="alert('Please login to access Deposit section!')">Fixed Deposit</a>
+            <?php endif; ?>
         </section>
 
         <section id="acc">
             <div>
                 <?php if (isset($_SESSION['customer_id'])): ?>
-                <a class="nav-head" href="acc.php">My Account</a>
+                    <a class="nav-head" href="acc.php">My Account</a>
                 <?php else: ?>
-                <a href="#" onclick="alert('Please login to access My Account section!')">My Account</a>
+                    <a href="#" class="basic" onclick="alert('Please login to access My Account section!')">My Account</a>
                 <?php endif; ?>
             </div>
         </section>
@@ -99,7 +104,7 @@ session_start();
 
             <!-- <div>
             <?php
-           
+
             $isLoggedIn = isset($_SESSION['customer_id']);
             ?>
 
@@ -141,20 +146,25 @@ session_start();
     <script>
         let slideIndex = 0;
         showSlides();
+
         function showSlides() {
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("fade");
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
-            } for (let i = 0; i < dots.length; i++) {
+            }
+            for (let i = 0; i < dots.length; i++) {
                 dots[i].classList.remove("active");
-            } slideIndex++;
+            }
+            slideIndex++;
             if (slideIndex > slides.length)
-                slideIndex = 1; slides[slideIndex - 1].style.display = "block";
+                slideIndex = 1;
+            slides[slideIndex - 1].style.display = "block";
             if (dots[slideIndex - 1]) {
                 dots[slideIndex - 1].classList.add("active");
-            } setTimeout(showSlides, 2000);
-        } 
+            }
+            setTimeout(showSlides, 2000);
+        }
     </script>
 </body>
 

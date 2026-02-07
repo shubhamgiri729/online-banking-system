@@ -32,6 +32,7 @@ body {
 
 
 #log_sign {
+    display: flex;
     margin-right: auto;
 }
 
@@ -42,6 +43,38 @@ body {
 
 #log_sign a:hover {
     text-decoration: underline;
+}
+
+.greet{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+    
+}
+
+.greet p{
+    color: darkblue;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#log_sign .tagline{
+    color: rgb(82, 79, 79);
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.greet b{
+    color: rgb(10, 174, 239);
+}
+
+#logout{
+    margin-left: 100vh;
+}
+
+#login{
+    margin-left: 10px;
 }
 
 
@@ -71,7 +104,7 @@ body {
 }
 
 .nav-head:hover{
-    background-color: #03A9F4;
+    background-color:  rgb(10, 174, 239);
     color: white;
 }
 
@@ -85,11 +118,18 @@ body {
 
 .content {
     display: none;
-    margin-top: 8px;
+    margin-top: 20px;
 }
 
 section:hover .content {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.basic{
+    color: black;
+    padding: 10px;
 }
 
 .main-content {
