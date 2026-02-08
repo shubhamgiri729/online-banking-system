@@ -36,7 +36,7 @@ session_start();
 
     <nav id="navbar">
         <section id="services">
-            <a id="service" class="nav-head" href="#">Services</a>
+            <a id="service" class="nav-head" tabindex="0" href="#">Services</a>
             <?php if (isset($_SESSION['customer_id'])): ?>
                 <div class="content">
                     <a href="perIntBank.html">Personal Internet Banking</a>

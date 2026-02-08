@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 
@@ -14,7 +14,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 80px;              
+    height: 80px;
     width: 100%;
     background: #ffffff;
     border-bottom: 2px solid #f4f3f1;
@@ -45,35 +45,35 @@ body {
     text-decoration: underline;
 }
 
-.greet{
+.greet {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 500px;
-    
+
 }
 
-.greet p{
+.greet p {
     color: darkblue;
     font-size: larger;
     font-weight: bold;
 }
 
-#log_sign .tagline{
+#log_sign .tagline {
     color: rgb(82, 79, 79);
     font-size: 12px;
     font-weight: normal;
 }
 
-.greet b{
+.greet b {
     color: rgb(10, 174, 239);
 }
 
-#logout{
+#logout {
     margin-left: 100vh;
 }
 
-#login{
+#login {
     margin-left: 10px;
 }
 
@@ -81,14 +81,14 @@ body {
 #navbar {
     position: fixed;
     list-style: none;
-    top: 80px;                
+    top: 80px;
     left: 0;
-    width: 240px;            
+    width: 240px;
     height: calc(100vh - 80px);
     background: #f7f7f7;
     border-right: 2px solid #f4f3f1;
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: none;
 }
 
 #navbar section {
@@ -96,18 +96,22 @@ body {
     margin-right: 20;
 }
 
-.nav-head{
+.nav-head {
     color: black;
-    /* border: 1px solid black; */
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
     border-radius: 10px;
     padding: 10px;
 }
 
-.nav-head:hover{
-    background-color:  rgb(10, 174, 239);
+.nav-head:hover,
+.nav-head:focus {
+    background-color: #03A9F4;
+    border: 1px solid #03a9ff;
     color: white;
+    display: block;
 }
-
 
 #navbar a {
     font-weight: bold;
@@ -121,20 +125,25 @@ body {
     margin-top: 20px;
 }
 
-section:hover .content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.content a{
+    color: black;
 }
 
-.basic{
+section:focus-within .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.basic {
     color: black;
     padding: 10px;
 }
 
 .main-content {
-    margin-top: 80px;          
-    margin-left: 240px;        
+    margin-top: 80px;
+    margin-left: 240px;
     padding: 30px;
     min-height: calc(100vh - 80px);
     background: #ffffff;
@@ -160,8 +169,13 @@ section:hover .content {
 }
 
 @keyframes fade {
-    from { opacity: 0.4; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 #disp {
@@ -174,7 +188,7 @@ section:hover .content {
 
 
 footer {
-    margin-left: 240px;    
+    margin-left: 240px;
     border-top: 2px solid #f4f3f1;
     padding: 20px;
     text-align: center;
