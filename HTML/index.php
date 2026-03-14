@@ -1,5 +1,6 @@
 <?php
 session_start();
+$page = $_GET['page'] ?? 'home';
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,12 +36,18 @@ session_start();
     </header>
 
     <nav id="navbar">
+<section id="Home">
+<a href="index.php?page=home"
+class="nav-head <?php if($page=='home') echo 'active'; ?>">
+Home
+</a>
+</section>
         <section id="services">
-            <a id="service" class="nav-head" tabindex="0" href="#">Services</a>
+            <a id="service" class="nav-head <?php if ($page == 'perIntBank' || $page == 'mtm') echo 'active'; ?>" tabindex="0" href="#">Services</a>
             <?php if (isset($_SESSION['customer_id'])): ?>
                 <div class="content">
-                    <a href="perIntBank.html">Personal Internet Banking</a>
-                    <a href="MTM.html" id="e_service">Minor to Major</a>
+                    <a href="index.php?page=perIntBank">Personal Internet Banking</a>
+                    <a href="index.php?page=mtm" id="e_service">Minor to Major</a>
                 </div>
             <?php else: ?>
                 <div class="content">
@@ -50,11 +57,11 @@ session_start();
         </section>
 
         <section id="payment_transfer">
-            <a href="#" class="nav-head">Payment Transfer</a>
+            <a href="#" class="nav-head <?php if ($page == 'natTransfer' || $page == 'billPay') echo 'active'; ?>">Payment Transfer</a>
             <?php if (isset($_SESSION['customer_id'])): ?>
                 <div class="content">
-                    <a href="natTransfer.php">National Transfer</a>
-                    <a href="billPay.html">Bill Payment</a>
+                    <a href="index.php?page=natTransfer">National Transfer</a>
+                    <a href="index.php?page=billPay">Bill Payment</a>
                 </div>
             <?php else: ?>
                 <div class="content">
@@ -65,7 +72,9 @@ session_start();
 
         <section id="fixed_deposite">
             <?php if (isset($_SESSION['customer_id'])): ?>
-                <a class="nav-head" href="fixDep.html">Fixed Deposit</a>
+                <a class="nav-head <?php if ($page == 'deposit') echo 'active'; ?>" href="index.php?page=deposit">
+Fixed Deposit
+</a>
             <?php else: ?>
                 <a href="#" class="basic" onclick="alert('Please login to access Deposit section!')">Fixed Deposit</a>
             <?php endif; ?>
@@ -74,7 +83,9 @@ session_start();
         <section id="acc">
             <div>
                 <?php if (isset($_SESSION['customer_id'])): ?>
-                    <a class="nav-head" href="acc.php">My Account</a>
+                    <a class="nav-head <?php if ($page == 'account') echo 'active'; ?>" href="index.php?page=account">
+My Account
+</a>
                 <?php else: ?>
                     <a href="#" class="basic" onclick="alert('Please login to access My Account section!')">My Account</a>
                 <?php endif; ?>
@@ -83,6 +94,55 @@ session_start();
     </nav>
 
     <main class="main-content">
+
+        <?php
+
+        switch ($page) {
+
+            case "perIntBank":
+                include "perIntBank.html";
+                break;
+
+            case "mtm":
+                include "MTM.html";
+                break;
+
+            case "natTransfer":
+                include "natTransfer.php";
+                break;
+
+            case "billPay":
+                include "billPay.html";
+                break;
+
+            case "deposit":
+                include "fixDep.html";
+                break;
+
+            case "account":
+                include "acc.php";
+                break;
+
+            default:
+        ?>
+                <section class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="../Images/online banking-1.png">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Images/online banking-2.png">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="../Images/online banking-3.png">
+                    </div>
+                </section>
+        <?php
+        }
+        ?>
+
+    </main>
+
+    <!-- <main class="main-content">
 
 
 
@@ -102,7 +162,7 @@ session_start();
         <div id="disp">
             <!-- <p>Login to see your Details here:</p> -->
 
-            <!-- <div>
+    <!-- <div>
             <?php
 
             $isLoggedIn = isset($_SESSION['customer_id']);
@@ -132,9 +192,9 @@ session_start();
             <p style="color: red;">You are not logged in.</p>
             <?php endif; ?>
         </div> -->
-        </div>
+    </div>
 
-    </main>
+    </main> -->
 
     <footer>
         <nav id="foot">

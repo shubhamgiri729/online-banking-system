@@ -92,7 +92,7 @@ body {
 }
 
 #navbar section {
-    margin-bottom: 100px;
+    margin-bottom: 10vh;
     margin-right: 20;
 }
 
@@ -116,6 +116,13 @@ body {
 #navbar a {
     font-weight: bold;
     text-decoration: none;
+}
+
+.nav-head.active{
+    background-color: #03A9F4;
+    border: 1px solid #03a9ff;
+    color: white;
+    display: block;
 }
 
 
