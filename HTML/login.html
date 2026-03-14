@@ -10,7 +10,7 @@
 
     <body onload="load();">
         <div id="header">
-            <h1 id="SKM" >Online Banking System</h1>
+            <!-- <h1 id="SKM" >Online Banking System</h1> -->
             <a href="index.php"><img src="../Images/onlinebank.jpg" alt="Online Banking System" title="Online Banking Website"></a>
           <div class="bank">
             <marquee direction="right" height="500px" behavior="loop" onmouseover="stop();" scrollamount="20" onmouseout="start();">Welcome to Online Bank !! </marquee>
@@ -20,8 +20,11 @@
         <form action="login.php" method="POST">
             <fieldset>
                 <legend>Login</legend>
+                <label for="email">Email: </label>
                 <input name="email" type="email" placeholder="Enter your Email Address" id="email" required><br />
+                <label for="accno">Account Number: </label>
                 <input type="text" name="username" placeholder="Enter your Account Number" id="accno" required><br />
+                <label for="password">Password: </label>
                 <input type="password" accept="number" name="password" placeholder="Enter your Password" id="password"
                     onblur="return validForm();" required><br />
                 <div id="result"></div>
@@ -30,6 +33,7 @@
                 <p class="sign"> Don`t have an account </p>
                 <p class="sign" id="signin" onclick="window.location.href='signup.html'">sign up</p>
             </fieldset>
+            <img src="../Images/online banking login page.png" alt="login page">
         </form>
     </body>
 
