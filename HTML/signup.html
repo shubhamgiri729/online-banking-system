@@ -11,17 +11,22 @@
 
     <body onload="load();">
         <div id="header">
-            <h1>Online Banking System</h1>
+            <!-- <h1>Online Banking System</h1> -->
             <a href="index.php"><img src="..//Images//onlinebank.jpg" alt="Online Banking Website" title="Online Banking Website"></a>
         </div>
         <form  action="signup.php" method="POST">
             <fieldset>
                 <legend>Sign Up</legend>
+                <label for="name">Name: </label>
                 <input type="text" name="name" id="name" placeholder="Enter your Name"><br />
+                <label for="username">Username: </label>
                 <input type="text" name="username" id="username" placeholder="Enter valid Username"
                     onblur="return validUserName();"><br />
+                <label for="email">Email: </label>
                 <input type="email" name="email" id="email" placeholder="Enter your Email Address"><br />
+                <label for="password">Password: </label>
                 <input type="password" name="password" id="password" placeholder="Password" onblur="return validPassword();"><br />
+                <label for="confirmPassword">Confirm Password: </label>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
                     onblur="return cnfrmPass();"><br />
                 <p id="result"></p>
@@ -33,6 +38,7 @@
                 <p class="log"> have an account </p>
                 <p class="log" id="login" onclick="window.location.href='login.html'">Login </p>
             </fieldset>
+            <img src="../Images/online bank sign up page.jpg" alt="sign-up page">
         </form>
     </body>
 

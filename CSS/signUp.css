@@ -1,32 +1,48 @@
 @import url("../CSS/home.css");
 fieldset{
-    border-radius:25px;
+    border-radius:5px;
     padding:20px;
-    background:linear-gradient(90deg,white,blue);
     text-align: center;
-    width:750px;
-    box-shadow:5px 10px 2px 5px;
-    margin:10px auto;
+    width:800px;
+    margin-top:10vh;
+    margin-left: 20vh;
 }
 form{
-    height:800px;
+    height:680px;
+    display: flex;
+    justify-content: space-between;   
 }
+
+form img{
+    margin-top: 13.5vh;
+    margin-right: 25vh;
+    width: 100vh;
+    height: 84vh;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
 legend{
     text-transform: uppercase;
     font-weight:bolder;
     font-size: 30px;
     text-align: end;
-    border-radius:20px;
-    border:3px solid black;
-    background-image:linear-gradient(red,white);
     padding:10px
 }
+
+label{
+    display: block;
+    text-align: left;
+    margin-left: 10vh;
+    font-size: 20px;
+}
+
+
 input{
-    height:30px;
-    border-radius:20px;
-    padding:25px;
+    height:10px;
+    border-radius:10px;
+    padding:15px;
     font-size:25px;
-    font-weight:bolder;
     margin:10px;
     width:70%;
 }
@@ -35,18 +51,18 @@ input:focus{
 }
 button{
     height:50px;
+    width: 100px;
     padding:10px;
-    border-radius:20px;
+    border-radius:10px;
     border-style:outset;
-    margin:5px 30px;
+    margin:5px 20px;
+    background-color: #03a9ff;
+    color: black;
     font-size: 20px;
     font-weight: bolder;
+    cursor: pointer;
 }
-/* span{
-    position: relative;
-    bottom:20px;
-    margin:0px;
-} */
+
 input[type="checkbox"]{
     height:20px;
     width:20px;
@@ -74,6 +90,7 @@ span{
 }
 #login{
     color: red;
+    cursor: pointer;
 }
 .log{
     font-size: 20px;
