@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Database connection
 $host = "localhost";
@@ -20,7 +22,7 @@ $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
 // Validate input
-if (($email || $username) && $password) {
+if ((!empty($email) || !empty($username)) && !empty($password)) {
 
     // Find user by email or username
     $stmt = $conn->prepare("
@@ -65,8 +67,8 @@ if (($email || $username) && $password) {
             }
 
             echo "<script>
-                alert('✅ Login Successful! Welcome, {$customer['name']}');
-                window.location.href = '/Online-Banking-Website/HTML/index.php';
+                // alert('✅ Login Successful! Welcome, {$customer['name']}');
+                window.location.href = '/Online-Banking-Website/HTML/home.php';
             </script>";
         } else {
             echo "<script>
