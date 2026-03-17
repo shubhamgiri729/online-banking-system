@@ -1,6 +1,6 @@
-<?php
+<!-- <?php
 session_start();
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +12,7 @@ session_start();
 </head>
 
 <body>
-    <div id="header">
-        <h1>Online Banking System</h1>
-        <a href="index.php"><img src="../Images/onlinebank.jpg" alt="Online Banking System"
-                title="Online Banking Website"></a>
-    </div>
+    <?php include "header.php"?>
 
     <div>
         <h1>My Account</h1>

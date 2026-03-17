@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 // Connect to database
 $host = "localhost";
@@ -48,13 +48,7 @@ $conn->close();
 </head>
 
 <body onload="load();">
-    <div id="header">
-        <h1>Online Banking System</h1>
-        <a href="index.php">
-            <img src="../Images/onlinebank.jpg" alt="Online Banking Website" title="Online Banking Website">
-        </a>
-    </div>
-
+    <?php include "header.php"?>
     <div id="menu">
         <h1>National Money Transfer</h1>
 
