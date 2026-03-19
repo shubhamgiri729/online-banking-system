@@ -142,58 +142,105 @@ section:focus-within .content {
     gap: 10px;
 }
 
-
-.basic {
-    color: black;
-    padding: 10px;
-}
+/* main content */
 
 .main-content {
     margin-top: 80px;
     margin-left: 240px;
     padding: 30px;
     min-height: calc(100vh - 80px);
-    background: #ffffff;
 }
 
+#disp{
+    display: flex;
+    padding-top: 5vh;
+    padding-left: 5vh;
+    width: 175vh;
+    height: 35vh;
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px black;
+    font-size: 20px;
+}
 
-.slideshow-container {
+#Account-overview{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vh;
+}
+
+.overview{
+    margin-top: 20px;
+    
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #03A9F4 0% 60%,   /* Used */
+        #e0e0e0 60% 100% /* Remaining */
+    );
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.slideshow-container img {
-    width: 800px;
-    height: 500px;
-    /* border-radius: 20px; */
-    object-fit: cover;
-    border: 2px solid black;
+/* Inner white circle */
+#limit-chart{
+    display: block;
+}
+
+.inner-circle {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Default text */
+.default-text {
+    position: absolute;
+    font-size: 15px;
+}
+
+/* Hidden hover content */
+.hover-text {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font: 10px;
+    color: black;
+}
+
+.max-limit {
+    font-weight: bold;
+    color: #333;
+}
+
+/* 🔥 Hover effect */
+.circle:hover .default-text {
+    display: none;
+}
+
+.circle:hover .hover-text {
+    display: flex;
+}
+
+.limit-text {
+    margin-top: 10px;
+    font-size: 14px;
+    margin-left: 10px;
 }
 
 
-.fade {
-    animation: fade 1.5s;
-}
 
-@keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-#disp {
-    margin-top: 40px;
-}
-
-#disp p {
-    font-size: 18px;
-}
-
-
+/* footer */
 footer {
     margin-left: 240px;
     border-top: 2px solid #f4f3f1;
