@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fixed Deposit | Online Banking Website mini project</title>
-        <link href="../CSS/fixDep.css" rel="stylesheet">
-        <script src="../Java Script/fixDepJS.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Deposit | Online Banking Website mini project</title>
+    <link href="../CSS/fixDep.css" rel="stylesheet">
+    <script src="../Java Script/fixDepJS.js"></script>
+</head>
 
-    <body onload="load();">
-        <?php include "header.php"?>
-        <div>
+<body onload="load();">
+    <?php include "header.php"?>
+    <main class="fixed">
+        <section class="deposit-info">
+
+            <h3>Benefits of Fixed Deposit</h3>
+
+            <p>Safe investment option</p>
+            <p>Guaranteed returns</p>
+            <p>Flexible deposit duration</p>
+            <p>Higher interest rates than savings accounts</p>
+
+        </section>
+        <div class="fd-container">
             <h1>Fixed Deposit</h1>
+
             <form method="POST">
-                <input type="text" id="accno" maxlength="16" placeholder="Enter the Account No.:" onblur="return validAcc();"><br />
-                <input type="number" id="rupee" max="50000" placeholder="Enter the Amount to Deposit:"><br />
-                <label>Enter the Payment Details:</label><br />
-                <select name="cards">
-                    <option value="credit">Credit Card</option>
-                    <option value="debit" selected>Debit Card</option>
-                </select><br />
-                <input type="text" id="cardno" maxlength="16" placeholder="Enter the Card No:" onblur="return validCard();"><br />
-                <input type="text" id="name" placeholder="Enter the Name on the Card:"><br />
-                <input type="password" maxlength="3" id="cvv" placeholder="Enter your 3-digit CVV:" onblur="right();"><br />
-                <p id="result"></p>
-                <button type="button" id="paybtn" onclick="goto();">Deposit</button>
+
+                <div class="form-group">
+                    <h3>Account Details</h3>
+
+                    <label>Account Number</label>
+                    <input type="text" id="accno" maxlength="16" placeholder="Enter Account Number"
+                        onblur="return validAcc();">
+                </div>
+
+                <div class="form-group">
+                    <h3>Deposit Details</h3>
+
+                    <label>Amount (₹)</label>
+                    <input type="number" id="rupee" min="10000" max="500000" placeholder="Min ₹10,000">
+
+                    <label>Duration (Years)</label>
+                    <input type="number" min="1" max="10" placeholder="e.g. 5 years">
+                </div>
+
+                <div class="form-group">
+                    <h3>Payment Details</h3>
+
+                    <label>Card Type</label>
+                    <select name="cards">
+                        <option value="debit" selected>Debit Card</option>
+                        <option value="credit">Credit Card</option>
+                    </select>
+
+                    <label>Card Number</label>
+                    <input type="text" id="cardno" maxlength="16" placeholder="Enter Card Number"
+                        onblur="return validCard();">
+
+                    <label>Name on Card</label>
+                    <input type="text" id="name" placeholder="Cardholder Name">
+
+                    <label>CVV</label>
+                    <input type="password" maxlength="3" id="cvv" placeholder="3-digit CVV" onblur="right();">
+
+                    <p id="result"></p>
+                </div>
+
+                <button type="button" id="paybtn" onclick="goto();">Confirm Deposit</button>
+
             </form>
         </div>
-    </body>
+    </main>
+</body>
 
 </html>

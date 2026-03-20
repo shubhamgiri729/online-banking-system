@@ -1,39 +1,120 @@
-@import url("home.css");
-form{
-    /* display: inline-block; */
-    margin:20px auto;
-    width:800px;
-    border: 5px solid black;
-    border-radius: 30px;
-    padding:20px;
+.fd-container {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.fd-container h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
-input{
-    width:500px;
+
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-label{
-    font-weight: bolder;
-    font-size: 30px;
-    border-top:3px dashed black;
-    border-bottom: 3px dashed black;
-    padding:5px;
+
+
+.form-group {
+    margin-bottom: 25px;
 }
-select{
-    margin-top:20px;
-    width:200px;
-    height:50px;
-    font-size:25px;
-    border-radius:30px;
+
+.form-group h3 {
+    margin-bottom: 10px;
+    color: #03A9F4;
 }
-button{
-    height:50px;
-    width:120px;
-    font-size: 25px;
-    padding:5px;
-    border-radius:30px;
-    border-style: outset;
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
-p{
-    color:red;
-    text-decoration: underline;
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #03A9F4;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #03A9F4;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0288D1;
+}
+
+.deposit-info{
+    margin-top: 10vh;
+    display: flex;
+    gap: 50px;
+}
+
+.deposit-info p{
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    padding: 5px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.deposit-info p::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color:#03A9F4;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+.deposit-info p:hover::before{
+    width: 100%;
+}
+
+.deposit-info p:hover{
+    border-color: #0288D1;
+    color: white;
+}
+
+.fixed {
+    margin-top: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
