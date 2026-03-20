@@ -109,49 +109,49 @@ $page = $_GET['page'] ?? 'home';
             default:
         ?>
 
+                <div id="disp">
+
+                    <?php
+                    $isLoggedIn = isset($_SESSION['customer_id']);
+                    $balance = $_SESSION['balance'];
+                    $maxLimit = 100000; // example limit
+                    $percentage = ($balance / $maxLimit) * 100;
+                    ?>
+
+                    <section id="limit-chart">
+                        <p class="max-limit">Max Limit: ₹<?php echo $maxLimit; ?></p>
+                        <div class="chart-container">
+
+                            <div class="circle" style="background: conic-gradient(#03A9F4 <?php echo $percentage; ?>%, #e0e0e0 0%);">
+
+                                <div class="inner-circle">
+                                    <span class="default-text">Balance</span>
+                                    <div class="hover-text">
+                                        <p><?php echo round($percentage); ?>%</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <p class="limit-text">Usage of Limit</p>
+                        </div>
+                    </section>
+
+                    <section id="Account-overview">
+                        <h1>Account Overview</h1>
+                        <p class="overview">Account Holder Name: <?php echo $_SESSION['name']; ?></p>
+
+                        <p class="overview">Account Number: <?php echo $_SESSION['account_number']; ?></p>
+
+                        <p class="overview">Current Balance: ₹ <?php echo $_SESSION['balance']; ?></p>
+                    </section>
+
+                </div>
+                </div>
+
         <?php
         }
         ?>
-
-        <div id="disp">
-
-            <?php
-            $isLoggedIn = isset($_SESSION['customer_id']);
-            $balance = $_SESSION['balance'];
-            $maxLimit = 100000; // example limit
-            $percentage = ($balance / $maxLimit) * 100;
-            ?>
-
-            <section id="limit-chart">
-                <p class="max-limit">Max Limit: ₹<?php echo $maxLimit; ?></p>
-                <div class="chart-container">
-
-                    <div class="circle" style="background: conic-gradient(#03A9F4 <?php echo $percentage; ?>%, #e0e0e0 0%);">
-
-                        <div class="inner-circle">
-                            <span class="default-text">Balance</span>
-                            <div class="hover-text">
-                                <p><?php echo round($percentage); ?>%</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <p class="limit-text">Usage of Limit</p>
-                </div>
-            </section>
-
-            <section id="Account-overview">
-                <h1>Account Overview</h1>
-                <p class="overview">Account Holder Name: <?php echo $_SESSION['name']; ?></p>
-
-                <p class="overview">Account Number: <?php echo $_SESSION['account_number']; ?></p>
-
-                <p class="overview">Current Balance: ₹ <?php echo $_SESSION['balance']; ?></p>
-            </section>
-
-        </div>
-        </div>
 
     </main>
 </body>
