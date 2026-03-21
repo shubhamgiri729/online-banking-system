@@ -1,6 +1,6 @@
 <!-- <?php
-session_start();
-?> -->
+        session_start();
+        ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,40 +12,59 @@ session_start();
 </head>
 
 <body>
-    <?php include "header.php"?>
+    <?php include "header.php" ?>
+    <main class="user-account">
 
-    <div>
-        <h1>My Account</h1>
-    </div>
+        <h1 class="account-title">My Account</h1>
 
-    <div id="pic">
-        <img src="../Images/man.png" alt="Profile Picture">
-        <p>Profile Picture</p>
-    </div>
+        <div class="account-container">
 
-    <div id="info">
-        <?php if (isset($_SESSION['customer_id'])): ?>
-            <label>Name:</label>
-            <input type="text" readonly value="<?php echo htmlspecialchars($_SESSION['name']); ?>"><br/>
+            <!-- Profile Section -->
+            <div class="profile-card">
+                <img src="../Images/man.png" alt="Profile Picture">
+                <h2><?php echo $_SESSION['name']; ?></h2>
+                <p>Customer</p>
+            </div>
 
-            <label>Account No:</label>
-            <input type="text" readonly value="<?php echo htmlspecialchars($_SESSION['account_number']); ?>"><br/>
+            <!-- Info Section -->
+            <div class="info-card">
+                <?php if (isset($_SESSION['customer_id'])): ?>
 
-            <label>Branch:</label>
-            <input type="text" readonly value="<?php echo htmlspecialchars($_SESSION['branch_name']); ?>"><br/>
+                    <div class="info-row">
+                        <label>Name:</label>
+                        <input type="text" readonly value="<?php echo $_SESSION['name']; ?>">
+                    </div>
 
-            <label>IFSC Code:</label>
-            <input type="text" readonly value="<?php echo htmlspecialchars($_SESSION['ifsc_code']); ?>"><br/>
+                    <div class="info-row">
+                        <label>Account No:</label>
+                        <input type="text" readonly value="<?php echo $_SESSION['account_number']; ?>">
+                    </div>
 
-            <label>Account Balance:</label>
-            <input type="text" readonly value="<?php echo htmlspecialchars($_SESSION['balance']); ?>"><br/>
-        <?php else: ?>
-            <script>
-                alert("Please login to view your account details!");
-                window.location.href = "login.html";
-            </script>
-        <?php endif; ?>
-    </div>
+                    <div class="info-row">
+                        <label>Branch:</label>
+                        <input type="text" readonly value="<?php echo $_SESSION['branch_name']; ?>">
+                    </div>
+
+                    <div class="info-row">
+                        <label>IFSC Code:</label>
+                        <input type="text" readonly value="<?php echo $_SESSION['ifsc_code']; ?>">
+                    </div>
+
+                    <div class="info-row">
+                        <label>Balance:</label>
+                        <input type="text" readonly value="₹ <?php echo $_SESSION['balance']; ?>">
+                    </div>
+
+                <?php else: ?>
+                    <script>
+                        alert("Please login to view your account details!");
+                        window.location.href = "login.html";
+                    </script>
+                <?php endif; ?>
+            </div>
+
+        </div>
+    </main>
 </body>
 
 </html>

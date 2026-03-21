@@ -1,34 +1,85 @@
 @import url("home.css");
-#pic img{
-    position: absolute;
-    top:150px;
-    left:100px;
-    border:5px solid red;
-    border-radius:50px;
-    height: 150px;
-    width: 150px;
+
+.account-container {
+    margin-left: 70px;
+    margin-top: 50px;
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.profile-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
     text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-#pic img{
-    height:150px;
+
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #03A9F4;
+    margin-bottom: 15px;
 }
-#pic p{
-    position: relative;
-    top:100px;
-    left:120px;
-    font-weight: bolder;
+
+.profile-card img:hover{
+    width: 130px;
+    height: 130px;
+    transition: all 0.4s ease;
 }
-#info{
-    position: absolute;
-    right:10px;
-    width:65%;
+
+.profile-card h2 {
+    color: #03A9F4;
 }
-input{
-    border:none;
-    border-radius:30px;
-    border-bottom: 2px solid black;
-    
+
+.info-card {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-label{
-    font-size: 30px;
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.info-row label {
+    font-weight: bold;
+    font-size: 16px;
+    width: 40%;
+}
+
+.info-row input {
+    width: 55%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+}
+
+.account-title {
+    margin-left: 70vh;
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+.user-account {
+    margin-top: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
