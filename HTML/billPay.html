@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bill Payment | Online Banking Website mini project</title>
-        <script src="../Java Script/billPayJS.js"></script>
-        <link rel="stylesheet" href="../CSS/billPay.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Payment | Online Banking Website mini project</title>
+    <script src="../Java Script/billPayJS.js"></script>
+    <link rel="stylesheet" href="../CSS/billPay.css">
+</head>
 
-    <body>
-        <?php include "header.php"?>
-        <div>
-            <h1>Bill Payment</h1>
-            <form action="" method="POST">
-                <fieldset>
-                    <label>Which Type of bill payment:</label>
-                    <select name="type">
-                        <div>
+<body>
+    <?php include "header.php"?>
+    <main class="main-container">
+        <h1 class="bill-title">Bill Payment</h1>
+
+        <div class="bill-container">
+            <div class="bill-card">
+                <form method="POST">
+
+                    <div class="form-group">
+                        <label>Bill Type</label>
+                        <select name="type">
                             <option value="Electricity">Electricity</option>
                             <option value="Water">Water</option>
                             <option value="Gas">Gas</option>
-                        </div>
-                    </select><br />
-                    <input type="text" size="16" id="billno" placeholder="Ente the Bill / Account No.:"><br />
-                    <input type="number" id="rupee" placeholder="Enter the rupees to pay:" min="1" max="20000"><br />
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bill / Account Number</label>
+                        <input type="text" id="billno" placeholder="Enter Bill / Account No." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" id="rupee" placeholder="Enter amount" min="1" max="20000" required>
+                    </div>
+
                     <p id="error"></p>
-                    <button type="button" id="paybtn" onclick="goto();">Pay</button>
-                </fieldset>
-            </form>
+
+                    <button type="button" id="paybtn" onclick="goto();">Pay Bill</button>
+
+                </form>
+            </div>
         </div>
-    </body>
+    </main>
+</body>
 
 </html>
