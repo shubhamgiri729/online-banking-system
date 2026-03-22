@@ -48,7 +48,7 @@ $conn->close();
 </head>
 
 <body onload="load();">
-    <?php include "header.php"?>
+    <?php include "header.php" ?>
     <div id="menu">
         <h1>National Money Transfer</h1>
 
@@ -59,10 +59,29 @@ $conn->close();
         <?php endif; ?>
 
         <form method="POST">
-            <input type="text" name="accno" id="accno" size="11" placeholder="Enter the Account Number of the Receiver:" required><br />
-            <input type="number" min="0" max="20000" name="amnt" id="amnt" placeholder="Enter the amount to send:" required><br />
-            <p id="error"></p>
-            <button type="button" id="submitbtn" onclick="goto();">Send</button>
+            <div class="transaction-detail">
+                <div class="account-info">
+                    <label for="beneficiary">Name of beneficiary </label>
+                    <input type="text" name="beneficiary" id="beneficiary" placeholder="Enter name of the Receiver" required>
+                </div>
+
+                <div class="account-info">
+                    <label for="accno">Account Number</label>
+                    <input type="text" name="accno" id="accno" size="11" placeholder="Enter Account Number of the Receiver" required>
+                </div>
+
+                <div class="account-info">
+                    <label for="ifsc">IFSC Code</label>
+                    <input type="text" name="ifsc" id="ifsc" placeholder="Enter the IFSC Code" required>
+                </div>
+
+                <div class="account-info">
+                    <label for="amnt">Amount</label>
+                    <input type="number" min="0" max="20000" name="amnt" id="amnt" placeholder="Enter the amount to send" required><br />
+                </div>
+                <p id="error"></p>
+                <button type="button" id="submitbtn" onclick="goto();">Transfer Money</button>
+            </div>
         </form>
     </div>
 </body>

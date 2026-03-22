@@ -1,48 +1,89 @@
 @import url("../CSS/home.css");
 #menu{
-    margin:100px auto;
+    margin:10px auto;
     height:500px;
-    width:1000px;
-    text-align: center;
+    width:700px;
+    margin-top: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
 }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 div#menu h1{
     position: relative;
-    bottom: 100px;
+    bottom: 30px;
+    margin-left: 20vh;
 }
-input{
+
+.transaction-detail{
+    border: 1px solid black;
+    margin-top: 20px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.account-info{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.account-info label{
+    display: block;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    margin-left: 5vh;
+}
+
+.account-info input{
     height:50px;
-    margin:20px;
-    border-radius:30px;
-    width:500px;
-    font-size:20px;
+    border-radius:10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-left: 5vh;
+    height: 40px;
+    width: 80vh;
     padding-left:10px;
 }
 button{
-    border-radius:30px;
-    height:50px;
-    width:200px;
-    font-size:30px;
-    font-weight:bolder;
+    margin-left: 5vh;
+    border-radius:10px;
+    color: white;
+    height:40px;
+    width:80vh;
+    font-size:25px;
     border-style:outset;
+    background-color: #03A9F4;
 }
-input[type="number"]:invalid{
-    border:2px solid red;
-}
+
 input:focus{
-    border:2px solid blue;
+    border:2px solid #03A9F4;
+    outline: none;
 }
 #error{
-    text-decoration: underline;
+    margin-left: 20vh;
+    margin-bottom: 1vh;
     color:red;
 }
 #balance{
     background-color: white;
     height:50px;
-    margin-left:35vh;
-    border-radius:30px;
+    margin-left:15vh;
+    border-radius:5px;
     width:500px;
     font-size:20px;
     padding-top: 1vmin;
-    padding-left:10px;
+    padding-left:100px;
     border: 2px solid black;
 }
