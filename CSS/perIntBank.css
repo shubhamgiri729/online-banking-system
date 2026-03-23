@@ -1,8 +1,127 @@
 @import url("../CSS/home.css");
-#nat{
-    height:500px;
-    width:700px;
-    background-size:700px 500px;
-    border-radius:30px;
-    margin:30px auto;
+
+.pib-title {
+    margin-left: 60vh;
+    margin-top: 50px;
+}
+
+
+.pib-container {
+    margin-left: 80px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.pib-container > div {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.balance {
+    font-size: 26px;
+    color: green;
+    font-weight: bold;
+
+}
+
+.upi-id {
+    color: gray;
+    font-size: 14px;
+}
+
+.form-group input,
+.request-card input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.pay-btn,
+.request-card button {
+    width: 100%;
+    padding: 10px;
+    background: #03A9F4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pay-btn:hover,
+.request-card button:hover {
+    background: #0288D1;
+}
+
+.quick-users {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.quick-users button {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.quick-users button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #03A9F4;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+.quick-users button:hover::before{
+    width: 100%;
+}
+
+.quick-users button:hover {
+    color: white;
+}
+
+
+.transactions ul {
+    list-style: none;
+}
+
+.transactions li {
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+}
+
+.offers p {
+    margin: 5px 0;
+}
+
+.main-pib-container{
+    margin-top: 0;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

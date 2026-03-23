@@ -1,16 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Internet Banking | Online Banking Website mini project</title>
     <link rel="stylesheet" href="../CSS/perIntBank.css">
 </head>
+
 <body>
     <?php include "header.php"?>
-    <div>
-        <h1>Personal Internet Banking</h1>
-        <div id="nat"></div>
-    </div>
+
+    <main class="main-pib-container">
+
+        <h1 class="pib-title">Personal Internet Banking</h1>
+
+        <div class="pib-container">
+
+            <div class="balance-card">
+                <h2>Available Balance</h2>
+                <p class="balance">₹
+                    <?php echo $_SESSION['balance'] ?? '0'; ?>
+                </p>
+                <p class="upi-id">UPI ID: shubham@bank</p>
+            </div>
+
+            <div class="upi-card">
+                <h3>Send Money</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="UPI ID / Account No." required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Amount" required>
+                    </div>
+                    <button type="button" class="pay-btn">Pay Now</button>
+                </form>
+            </div>
+
+
+            <div class="quick-pay">
+                <h3>Quick Pay</h3>
+                <div class="quick-users">
+                    <button>Rahul</button>
+                    <button>Amit</button>
+                    <button>Electricity</button>
+                    <button>Water</button>
+                </div>
+            </div>
+
+
+            <div class="transactions">
+                <h3>Recent Transactions</h3>
+                <ul>
+                    <li>₹500 → Rahul</li>
+                    <li>₹1200 → Electricity</li>
+                    <li>₹2000 → Amit</li>
+                </ul>
+            </div>
+
+            <div class="request-card">
+                <h3>Request Money</h3>
+                <input type="text" placeholder="Enter UPI ID">
+                <input type="number" placeholder="Amount">
+                <button>Request</button>
+            </div>
+
+            <div class="offers">
+                <h3>Offers</h3>
+                <p>💸 Get 10% cashback on bill payments</p>
+                <p>🎉 Flat ₹50 reward on first UPI transfer</p>
+            </div>
+
+        </div>
+    </main>
 </body>
+
 </html>
