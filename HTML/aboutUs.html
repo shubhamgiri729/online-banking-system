@@ -9,44 +9,79 @@
 </head>
 
 <body>
-    <div id="header">
-        <h1>Online Banking System</h1>
-        <a href="index.php"><img src="..//Images//onlinebank.jpg" alt="Online Banking System"
-                title="Online Banking Website"></a>
-    </div>
-    <div>
-        <h1 style="text-decoration: underline;">About Us</h1>
-        <div id="creator">
-            <h2>Developer: Shubham Giri</h2>
-            <p style="text-align: start;font-size: 3vh">Welcome to our Online Banking System, a secure and user-friendly
-                platform designed to simplify the way customers manage their finances.
-                <br>
-                Our system is developed with the goal of providing an intuitive digital banking experience that combines
-                convenience, efficiency, and security.
-                <br>
-                With our Online Banking System, users can easily check account balances, view transaction history,
-                transfer funds, and manage their accounts from the comfort of their home or on the go. Special features,
-                such as automatic account conversion from minor to major accounts, ensure that our platform caters to
-                the evolving needs of all users while maintaining full compliance with banking regulations.
 
-                Our project emphasizes:
-                <br>
-                Security: Advanced encryption techniques to keep user data safe and confidential.
-                <br>
-                User-Friendly Interface: Simple and interactive design for seamless navigation.
-                <br>
-                Accessibility: Available anytime, anywhere, allowing users to manage finances without visiting a branch.
-                <br>
-                Efficiency: Quick transactions and real-time updates to enhance banking experience.
-                <br>
-                Our mission is to bridge the gap between traditional banking and modern digital solutions, making
-                banking more accessible, transparent, and convenient for everyone.
+    <?php include "header.php" ?>
+
+    <main class="about-container">
+
+        <h1 class="about-title">About Us</h1>
+
+        <div class="about-card">
+
+            <h2 class="developer">👨‍💻 Developer: Shubham Giri</h2>
+
+            <p>
+                Welcome to our <b>Online Banking System</b>, a secure and user-friendly platform designed to simplify
+                the way customers manage their finances.
             </p>
+
+            <p>
+                Our system provides an intuitive digital banking experience that combines convenience, efficiency,
+                and security.
+            </p>
+
+            <p>
+                With this platform, users can:
+            </p>
+
+            <ul>
+                <li>✔ Check account balance</li>
+                <li>✔ View transaction history</li>
+                <li>✔ Transfer funds easily</li>
+                <li>✔ Manage accounts anytime, anywhere</li>
+                <li>✔ Convert minor account to major account online</li>
+            </ul>
+
+            <h3>🌟 Key Features</h3>
+
+            <div class="features">
+                <div class="feature-box">
+                    🔐 <b>Security</b>
+                    <p>Advanced encryption ensures your data is always protected.</p>
+                </div>
+
+                <div class="feature-box">
+                    💡 <b>User-Friendly</b>
+                    <p>Simple and clean interface for easy navigation.</p>
+                </div>
+
+                <div class="feature-box">
+                    🌍 <b>Accessibility</b>
+                    <p>Access your account anytime from anywhere.</p>
+                </div>
+
+                <div class="feature-box">
+                    ⚡ <b>Efficiency</b>
+                    <p>Fast transactions with real-time updates.</p>
+                </div>
+            </div>
+
+            <p class="mission">
+                Our mission is to bridge the gap between traditional banking and modern digital solutions,
+                making banking more accessible, transparent, and convenient for everyone.
+            </p>
+
         </div>
-    </div>
-    <footer style="text-align: center;">
+        <div class="back-btn-container">
+            <a href="index.php" class="back-btn">← Back to Home</a>
+        </div>
+
+    </main>
+
+    <footer>
         &copy; 2025 Shubham Giri. All rights reserved.
     </footer>
+
 </body>
 
 </html>

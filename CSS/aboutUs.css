@@ -1,13 +1,102 @@
 @import url("home.css");
 
-#creator{
-    margin:30px auto;
-    width:1000px;
-    text-align: center;
-    font-size:40px;
-    font-family: 'Courier New', Courier, monospace;
+.about-container {
+    margin-left: 100px;
+    padding: 30px;
 }
 
-p{
-    font-size: 10vh;
+
+.about-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #03A9F4;
+}
+
+.about-card {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    line-height: 1.7;
+}
+
+.developer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.about-card ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.about-card ul li {
+    margin-bottom: 8px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.feature-box {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    background: #03A9F4;
+    color: white;
+}
+
+.mission {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.back-btn-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.back-btn {
+    text-decoration: none;
+    background: #03A9F4;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #0288D1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.back-btn:active {
+    transform: scale(0.95);
+}
+
+footer {
+    margin-left: 240px;
+    border-top: 2px solid #eee;
+    padding: 20px;
+    text-align: center;
 }
