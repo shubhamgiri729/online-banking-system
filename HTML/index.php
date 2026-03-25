@@ -68,6 +68,34 @@
     </nav>
 
     <main class="main-content">
+        <section class="hero">
+            <h1>Welcome to Online Banking</h1>
+            <p>Secure • Fast • Reliable Banking at Your Fingertips</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>💸 Money Transfer</h3>
+                <p>Send money instantly across accounts with secure transactions.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💳 Bill Payments</h3>
+                <p>Pay electricity, water, and gas bills easily.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📈 Fixed Deposit</h3>
+                <p>Grow your savings with high interest FD plans.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔐 Secure Banking</h3>
+                <p>Your data is protected with advanced security systems.</p>
+            </div>
+        </section>
+
+
         <section class="slideshow-container">
             <div class="mySlides fade">
                 <img src="../Images/online banking-1.png">
@@ -77,6 +105,32 @@
             </div>
             <div class="mySlides fade">
                 <img src="../Images/online banking-3.png">
+            </div>
+        </section>
+
+        <section class="info">
+            <h2>Why Choose Our Bank?</h2>
+
+            <div class="info-points">
+                <div>
+                    <h4>🔐 Secure Transactions</h4>
+                    <p>Advanced encryption ensures your money and data are always safe.</p>
+                </div>
+
+                <div>
+                    <h4>⚡ Fast Banking</h4>
+                    <p>Instant transfers and quick access to all banking services.</p>
+                </div>
+
+                <div>
+                    <h4>📱 Easy to Use</h4>
+                    <p>Simple and clean interface designed for all users.</p>
+                </div>
+
+                <div>
+                    <h4>🕒 24/7 Access</h4>
+                    <p>Access your account anytime, anywhere.</p>
+                </div>
             </div>
         </section>
 
